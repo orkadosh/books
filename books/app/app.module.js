@@ -1,10 +1,10 @@
 // app/app.module.js
 var app=angular.module('myApp',['ngRoute','ui.bootstrap']);
 // app.routes.js
-debugger
+
 
 app.config(function ($routeProvider) {
-        debugger
+        
         $routeProvider
             .when('/login', {
                 templateUrl: './app/component/login/login.component.html',

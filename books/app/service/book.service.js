@@ -1,10 +1,10 @@
 // services/book.service.js
 
 app.service('BookService', ['$http', function ($http) {
-    debugger
+    
     let books = [];
     this.getBooksList = function (params) {
-        debugger
+        
         return $http.get('https://www.googleapis.com/books/v1/volumes',{ params: params } )
             .then(function (response) {
                 var data = response.data;
@@ -17,7 +17,7 @@ app.service('BookService', ['$http', function ($http) {
     };
  
     // this.getBookDetails = function (books, bookId) {
-    //     debugger
+    //     
     //     // Find the book with the specified ID in the already fetched list
     //     var book = books.find(function (item) {
     //         return item.id === bookId;
@@ -26,7 +26,7 @@ app.service('BookService', ['$http', function ($http) {
     //     return book || null;
     // };
     this.getBookDetails = function (bookId) {
-        debugger
+        
         // Find the book with the specified ID in the already fetched list
         var book = books.items.find(function (item) {
             return item.id === bookId;
@@ -41,7 +41,7 @@ app.service('BookService', ['$http', function ($http) {
     //       };
     //       return $http.get(book.volumeInfo.infoLink,config)
     //       .then(function (response) {
-    //           debugger
+    //           
     //           var data = response.data;
     //           return {
     //               items: data.items || [],

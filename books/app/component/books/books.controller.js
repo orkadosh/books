@@ -7,7 +7,7 @@ app.controller('BooksController', ['$scope','BookService','$location', function 
         $scope.itemsPerPage = 10;
 
         $scope.searchBooks = function () {
-            debugger
+            
             // Fetch books from Google Books API based on the search query
             const apiUrl = 'https://www.googleapis.com/books/v1/volumes';
             const params = {
@@ -18,7 +18,7 @@ app.controller('BooksController', ['$scope','BookService','$location', function 
 
             BookService.getBooksList(params)
             .then(function (result) {
-                debugger
+                
                 // Store the list of books and totalItems in the scope
                 $scope.books = result.items;
                 $scope.totalItems = result.totalItems;
@@ -32,7 +32,7 @@ app.controller('BooksController', ['$scope','BookService','$location', function 
 
             // $http.get(apiUrl, { params: params })
             //     .then(function (response) {
-            //         debugger
+            //         
             //         $scope.books = response.data.items || [];
             //         $scope.totalItems = response.data.totalItems || 0;
             //     })
@@ -42,7 +42,7 @@ app.controller('BooksController', ['$scope','BookService','$location', function 
         };
 
         $scope.showMoreDetails = function (book) {
-            debugger
+            
             // Implement logic to show more details of the selected book
             //alert('Showing more details for: ' + book.volumeInfo.title);
             $location.path('/books/' + book.id);
@@ -55,7 +55,7 @@ app.controller('BooksController', ['$scope','BookService','$location', function 
         };
 
         $scope.pageChanged = function (event) {
-            debugger
+            
             // Fetch books for the new page
             $scope.searchBooks();
         };
