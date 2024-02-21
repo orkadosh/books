@@ -1,0 +1,59 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>books App</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Add this script tag in your HTML file to include UI Bootstrap -->
+ 
+    <style>
+        html, body {
+            height: 97%;    
+            margin: 0; /* Remove default margin */
+              padding: 0; /* Remove default padding */
+              overflow: auto;
+        }
+        footer {
+            background-color: #f8f8f8;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container{
+            height: inherit;
+            z-index: 1;
+            padding-top: 5em;
+
+        }
+    </style>
+</head>
+<body>
+        <!-- Header -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">My App</a>
+                </div>
+        </nav>
+        <div class="container" ng-controller="MyController">
+            <ng-view></ng-view>
+        </div>
+     <!-- Footer -->
+     <footer>
+        <p>&copy; 2024 My App. All rights reserved.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>
+    <!-- Your custom CSS styles can be added here -->
+    <script src="app/app.module.js"></script>
+    <script src="app/service/book.service.js"></script>
+    <script src="app/app.controller.js"></script>
+    <script src="app/component/login/login.controller.js"></script>
+    <script src="app/component/books/books.controller.js"></script>
+    <script src="app/component/books/book-details.controller.js"></script>
+
+</body>
+</html>

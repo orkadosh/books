@@ -1,0 +1,13 @@
+<!-- login.component.html -->
+<div ng-controller="LoginController">
+    <h2>Login</h2>
+    <form ng-submit="login($event)">
+        <label for="username">Username:</label>
+        <input type="text" id="username" ng-model="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" ng-model="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+</div>

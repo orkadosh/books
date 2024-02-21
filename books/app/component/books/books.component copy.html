@@ -1,0 +1,26 @@
+<!-- books.component.html -->
+<div ng-controller="BooksController">
+    <h2>Books List</h2>
+    
+    <!-- Search Bar -->
+    <div>
+        <input type="text" ng-model="query" placeholder="Search...">
+        <button ng-click="searchBooks()">Search</button>
+    </div>
+
+    <!-- Book List -->
+    <ul>
+        <li ng-repeat="book in books">
+            <div>
+                <strong>{{ book.volumeInfo.title }}</strong> by {{ book.volumeInfo.authors.join(', ') }}
+                <button ng-click="showMoreDetails(book)">Show More</button>
+                <button ng-click="toggleFavorite(book)">
+                    {{ book.favorite ? 'Remove from Favorites' : 'Add to Favorites' }}
+                </button>
+            </div>
+        </li>
+    </ul>
+
+    <!-- Pagination Controls -->
+    <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage" max-size="5" ng-change="pageChanged()"></uib-pagination>
+</div>
